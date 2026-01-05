@@ -1,4 +1,7 @@
-Greetings! Thank you for assisting me in crafting the unit test. Your expertise is invaluable in generating test cases targeting specific segments of the method-under-test. Let's begin by introducing the method to be tested along with its dependencies. Then, detailed instructions will follow for generating the test case. Finally, examples will illustrate how to utilize the method-under-test and compose corresponding test cases.
+Greetings! Thank you for assisting me in crafting the unit test. Your expertise is invaluable in generating test cases targeting specific <#if target_line??>line<#else>segments</#if> of the method-under-test. Let's begin by introducing the method to be tested along with its dependencies. Then, detailed instructions will follow for generating the test case. Finally, examples will illustrate how to utilize the method-under-test and compose corresponding test cases.
+<#if target_line??>
+When this method is tested, line ${target_line} is not executed.
+</#if>
 
 ### Method-to-test && Dependencies
 
@@ -41,7 +44,7 @@ Now please generate a whole unit test file for the method-to-test.
 - Import all dependent libraries used in the unit test file.
 - Name the test class as ${class_name}_Test.
 - Ensure that the unit test methods do test the method under test:
-- Target the method under test as ${class_name}.${method_name}.
+- Target the <#if target_line??>line ${target_line} in the </#if>method under test as ${class_name}.${method_name}.
 - Utilize appropriate tools and adhere to the language style guidelines:
 - Utilize JUnit 5 for testing.
 - Adhere to Java 8 language style conventions.
