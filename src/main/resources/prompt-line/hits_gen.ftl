@@ -1,4 +1,4 @@
-Greetings! Thank you for assisting me in crafting the unit test. Your expertise is invaluable in generating test cases targeting a specific Line of the method-under-test. Let's begin by introducing the method to be tested along with its dependencies. Then, detailed instructions will follow for generating the test case. Finally, examples will illustrate how to utilize the method-under-test and compose corresponding test cases.
+Greetings! Thank you for assisting me in crafting the unit test. Your expertise is invaluable in generating test cases targeting a specific line of the method-under-test. Let's begin by introducing the method to be tested along with its dependencies. Then, detailed instructions will follow for generating the test case. Finally, examples will illustrate how to utilize the method-under-test and compose corresponding test cases.
 
 ### Method-to-test && Dependencies
 
