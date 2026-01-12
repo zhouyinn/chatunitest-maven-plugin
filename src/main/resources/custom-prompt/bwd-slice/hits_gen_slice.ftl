@@ -36,7 +36,6 @@ For other member methods, I'll provide only their signatures.
 - Trace backward to the statements where these values are defined or modified.
 - Recursively repeat this process until reaching the first code statement of the method under test.
 - The slice is computed by following data and control dependencies of the specific target line backward through the method under test.
-
 - Your analysis has two parts:
 a. Describe control and data flow of the slice.
 b. Replicate the corresponding original code statements.
@@ -56,19 +55,20 @@ Here's an example output format for your analysis:
 
 ```json
 {
-"summarization": "...",
-"//": "Local variables defined in the focal method should not be reported.",
-"invoked_outside_vars": [
-"input_str: string, input parameter, the input string to handle",
-"code.format: public string, public class field of object 'code' of class Encoding, representing the format to encode the input string",
-"..."
-],
-"invoked_outside_methods": [
-"parser.norm(string): public member method of object 'parser' of class 'Parser', responsible for normalizing the input string",
-"..."
-],
-"steps": [{
-"desp": "Initialization and setup\n    - Initialize an empty list of tokens.\n    - Initialize a boolean flag `eatTheRest` to false.",
-"code": "    ArrayList&lt;String&gt; tokens = new List();\n boolean eatTheRest = false;\n"}]
+    "summarization": "...",
+    "//": "Local variables defined in the focal method should not be reported.",
+    "invoked_outside_vars": [
+        "input_str: string, input parameter, the input string to handle",
+        "code.format: public string, public class field of object 'code' of class Encoding, representing the format to encode the input string",
+        "..."
+    ],
+    "invoked_outside_methods": [
+        "parser.norm(string): public member method of object 'parser' of class 'Parser', responsible for normalizing the input string",
+        "..."
+    ],
+    "steps": [
+        {"desp": "Initialization and setup\n    - Initialize an empty list of tokens.\n    - Initialize a boolean flag `eatTheRest` to false.",
+         "code": "    ArrayList&lt;String&gt; tokens = new List();\n boolean eatTheRest = false;\n"}
+    ]
 }
 ```
