@@ -7,10 +7,9 @@ import zju.cst.aces.api.Task;
 import zju.cst.aces.api.impl.RunnerImpl;
 
 import java.io.File;
-import java.io.IOException;
 
-@Mojo(name = "line")
-public class LineTestMojo extends ProjectTestMojo {
+@Mojo(name = "lineWithoutOverload")
+public class LineTestWithoutOverloadMojo extends ProjectTestMojo {
 
     @Parameter(property = "selectMethod", required = true)
     public String selectMethod;
@@ -23,7 +22,8 @@ public class LineTestMojo extends ProjectTestMojo {
         if (shouldSkip()) return;
 
         String className = selectMethod.split("#")[0];
-        String methodName = selectMethod.split("#")[1];
+        String signature = selectMethod.split("#")[1];
+        String methodName = signature.substring(0, signature.indexOf('('));
 
         try {
             if ("TELPA".equals(phaseType)) {
@@ -41,7 +41,7 @@ public class LineTestMojo extends ProjectTestMojo {
             }
 
             new Task(config, new RunnerImpl(config))
-                    .startLineTask(className, methodName, line);
+                    .startLineWithoutOverloadTask(className, methodName, signature, line);
 
         } catch (Exception e) {
             throw new MojoExecutionException(

@@ -53,9 +53,8 @@ public class MethodTestWithoutOverloadMojo
         }
 
         String className = selectMethod.split("#")[0];
-        String methodName = selectMethod.split("#")[1];
-        String signature = simplifyMethodCall(selectMethod);
-
+        String signature = selectMethod.split("#")[1];
+        String methodName = signature.substring(0, signature.indexOf('('));
 
         try {
             // Execute Maven commands only if phaseType is TELPA and they haven't been executed yet
