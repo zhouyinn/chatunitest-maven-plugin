@@ -10,7 +10,7 @@ Here is the source code of the focal class, including member methods and fields.
 
 The complete code provided here is for reference only and is not intended for generating unit tests.
 ```java
-${full_fm}
+${full_fm_with_target_line}
 ```
 
 <#-- List of dependent classes and their brief information -->

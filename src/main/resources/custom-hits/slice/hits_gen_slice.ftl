@@ -6,7 +6,7 @@ Here's an optimized version of your FTL template, designed to ensure that the ou
 The exact line-to-test is line number ${target_line} in ${method_sig} within the focal class ${class_name}
 
 <#-- This section will be replaced with the full source code of the class -->
-${full_fm}
+${full_fm_with_target_line}
 
 <#-- List of dependent classes and their brief information -->
 <#list c_deps as key, value>
