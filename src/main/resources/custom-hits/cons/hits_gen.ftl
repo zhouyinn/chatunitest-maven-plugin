@@ -4,7 +4,7 @@ Greetings! Thank you for assisting me in crafting the unit test. Your expertise 
 
 **Introduction of method-to-test (${method_sig}) and Focal Class (${class_name})**
 
-The specific target line at line number ${target_line} is within the method ${method_sig} of the focal class ${class_name} and corresponds to the rule ${cons_description}.
+The specific target line at line number ${target_line} is within the method ${method_sig} of the focal class ${class_name} and corresponds to the rule ${constraint_desc}.
 
 Here is the source code of the focal class, including member methods and fields. The full implementation of the method-to-test will be provided, along with summarizations and signatures of other member methods.
 

@@ -17,6 +17,9 @@ public class LineTestWithoutOverloadMojo extends ProjectTestMojo {
     @Parameter(property = "targetLine", required = true)
     public int line;
 
+    @Parameter(property = "constraintDesc")
+    private String constraintDesc;
+
     public void execute() throws MojoExecutionException {
         init();
         if (shouldSkip()) return;
@@ -41,7 +44,7 @@ public class LineTestWithoutOverloadMojo extends ProjectTestMojo {
             }
 
             new Task(config, new RunnerImpl(config))
-                    .startLineWithoutOverloadTask(className, methodName, signature, line);
+                    .startLineWithoutOverloadTask(className, methodName, signature, line, constraintDesc);
 
         } catch (Exception e) {
             throw new MojoExecutionException(
